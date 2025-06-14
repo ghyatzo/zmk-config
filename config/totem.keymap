@@ -47,7 +47,15 @@
         };
     };
 
-    combos { compatible = "zmk,combos"; };
+    combos {
+        compatible = "zmk,combos";
+
+        to-base-layer {
+            bindings = <&to 0>;
+            key-positions = <20 31>;
+            require-prior-idle-ms = <100>;
+        };
+    };
 
     keymap {
         compatible = "zmk,keymap";
@@ -65,7 +73,7 @@
         Nav {
             display-name = "Nav";
             bindings = <
-              &kp TILDE       &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp PLUS        &kp EQUAL  &kp HOME     &kp DELETE  &kp END        &kp RIGHT_CONTROL
+              &kp GRAVE       &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp PLUS        &kp EQUAL  &kp HOME     &kp DELETE  &kp END        &kp RIGHT_CONTROL
               &kp LEFT_SHIFT  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp MINUS       &kp SLASH  &kp LEFT     &kp UP      &kp RIGHT      &kp RIGHT_SHIFT
 &kp LEFT_ALT  &kp LEFT_WIN    &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0    &kp STAR   &kp PAGE_UP  &kp DOWN    &kp PAGE_DOWN  &kp RIGHT_GUI      &kp RIGHT_ALT
                                             &trans        &trans        &trans          &trans     &trans       &kp DOT
@@ -77,38 +85,28 @@
             bindings = <
               &kp GRAVE       &kp NUMBER_1      &kp NUMBER_2      &kp NUMBER_3          &kp NUMBER_4      &kp NUMBER_5     &kp NUMBER_6           &kp NUMBER_7       &kp NUMBER_8  &kp NUMBER_9
               &kp LEFT_SHIFT  &kp LEFT_CONTROL  &kp LEFT_BRACKET  &kp LEFT_PARENTHESIS  &kp LEFT_BRACE    &kp RIGHT_BRACE  &kp RIGHT_PARENTHESIS  &kp RIGHT_BRACKET  &trans        &trans
-&kp LEFT_ALT  &kp RIGHT_GUI   &trans            &trans            &trans                &trans            &kp NUMBER_0     &kp EQUAL              &trans             &trans        &kp BACKSLASH  &studio_unlock
-                                                &trans            &trans                &trans            &kp SPACE        &trans                 &trans
+&kp LEFT_ALT  &kp RIGHT_GUI   &trans            &trans            &trans                &trans            &kp NUMBER_0     &kp EQUAL              &trans             &trans        &kp BACKSLASH  &kp APOS
+                                                &trans            &trans                &studio_unlock    &kp SPACE        &trans                 &kp UNDERSCORE
             >;
         };
 
         Fun {
             display-name = "Fun";
             bindings = <
-        &bootloader  &trans  &trans  &trans  &to 4     &trans  &trans  &trans  &kp END  &kp F1
-        &trans       &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans   &kp F10
-&trans  &trans       &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans   &kp F20  &kp F7
-                             &trans  &trans  &trans    &trans  &trans  &trans
+        &trans  &trans  &trans  &trans  &to 4     &trans  &trans  &trans  &trans  &kp F1
+        &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &kp F10
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &kp F20  &kp F7
+                        &trans  &trans  &trans    &trans  &trans  &trans
             >;
         };
 
-        Gaming {
+        WASD-Gaming {
             display-name = "Game";
             bindings = <
-            &kp Z           &kp X  &kp C      &kp V         &sl 5     &trans  &trans  &trans  &trans  &trans
-            &kp TAB         &kp Q  &kp W      &kp E         &kp R     &trans  &trans  &trans  &trans  &trans
-&kp ESCAPE  &kp LEFT_SHIFT  &kp A  &kp S      &kp D         &kp F     &trans  &trans  &trans  &trans  &trans  &trans
+            &kp TAB         &kp Q  &kp X      &kp E         &kp R     &trans  &trans  &trans  &trans  &trans
+            &kp LEFT_SHIFT  &kp A  &kp W      &kp D         &kp F     &trans  &trans  &trans  &trans  &trans
+&kp ESCAPE  &kp Z           &kp C  &kp S      &kp V         &kp T     &trans  &trans  &trans  &trans  &trans  &trans
                                    &kp LCTRL  &kp LEFT_ALT  &trans    &trans  &trans  &trans
-            >;
-        };
-
-        Gaming+ {
-            display-name = "Game+";
-            bindings = <
-        &kp F10  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp T     &kp RA(RC(Y))  &kp RA(RC(U))  &trans  &trans  &kp LC(RA(DEL))
-        &kp L    &kp O         &kp Y         &kp K         &kp G     &kp F5         &kp F7         &trans  &trans  &kp F12
-&trans  &to 0    &trans        &trans        &trans        &trans    &trans         &trans         &trans  &trans  &kp F22          &kp LA(F4)
-                               &kp J         &kp I         &kp M     &trans         &trans         &trans
             >;
         };
     };
