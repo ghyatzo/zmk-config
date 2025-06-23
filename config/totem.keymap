@@ -132,20 +132,20 @@
         Nav {
             display-name = "Nav";
             bindings = <
-              &kp GRAVE       &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp PLUS        &kp EQUAL  &kp HOME     &kp DELETE  &kp END        &kp RIGHT_CONTROL
-              &kp LEFT_SHIFT  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp MINUS       &kp SLASH  &kp LEFT     &kp UP      &kp RIGHT      &kp RIGHT_SHIFT
-&kp LEFT_ALT  &kp LEFT_WIN    &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0    &kp STAR   &kp PAGE_UP  &kp DOWN    &kp PAGE_DOWN  &kp RIGHT_GUI      &kp RIGHT_ALT
-                                            &trans        &trans        &trans          &trans     &trans       &trans
+        &kp GRAVE  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp PLUS        &kp EQUAL  &kp HOME     &kp DELETE  &kp END        &trans
+        &trans     &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp MINUS       &kp SLASH  &kp LEFT     &kp UP      &kp RIGHT      &trans
+&trans  &trans     &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0    &kp STAR   &kp PAGE_UP  &kp DOWN    &kp PAGE_DOWN  &trans  &trans
+                                 &trans        &trans        &trans          &trans     &trans       &trans
             >;
         };
 
         Sym {
             display-name = "Sym";
             bindings = <
-              &kp GRAVE       &kp NUMBER_1      &kp NUMBER_2      &kp NUMBER_3          &kp NUMBER_4      &kp NUMBER_5     &kp NUMBER_6           &kp NUMBER_7       &kp NUMBER_8  &kp NUMBER_9
-              &kp LEFT_SHIFT  &kp LEFT_CONTROL  &kp LEFT_BRACKET  &kp LEFT_PARENTHESIS  &kp LEFT_BRACE    &kp RIGHT_BRACE  &kp RIGHT_PARENTHESIS  &kp RIGHT_BRACKET  &trans        &trans
-&kp LEFT_ALT  &kp LEFT_GUI    &trans            &trans            &trans                &kp N0            &kp NUMBER_0     &kp EQUAL              &trans             &trans        &kp BACKSLASH  &kp APOS
-                                                &trans            &trans                &studio_unlock    &kp SPACE        &trans                 &trans
+        &kp GRAVE  &kp NUMBER_1  &kp NUMBER_2      &kp NUMBER_3          &kp NUMBER_4      &kp NUMBER_5     &kp NUMBER_6           &kp NUMBER_7       &kp NUMBER_8  &kp NUMBER_9
+        &trans     &trans        &kp LEFT_BRACKET  &kp LEFT_PARENTHESIS  &kp LEFT_BRACE    &kp RIGHT_BRACE  &kp RIGHT_PARENTHESIS  &kp RIGHT_BRACKET  &trans        &trans
+&trans  &trans     &trans        &trans            &trans                &kp N0            &kp NUMBER_0     &kp EQUAL              &trans             &trans        &kp BACKSLASH  &kp APOS
+                                 &trans            &trans                &studio_unlock    &kp SPACE        &trans                 &trans
             >;
         };
 
