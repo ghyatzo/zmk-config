@@ -101,18 +101,61 @@
         combo-dash {
             bindings = <&kp MINUS>;
             key-positions = <14 25>;
-            require-prior-idle-ms = <100>;
         };
 
         combo-equal {
             bindings = <&kp EQUAL>;
-            key-positions = <15 26>;
-            require-prior-idle-ms = <100>;
+            key-positions = <16 27>;
         };
 
         combo-underscore {
             bindings = <&kp UNDER>;
             key-positions = <13 24>;
+        };
+
+        combo-plus {
+            bindings = <&kp PLUS>;
+            key-positions = <15 26>;
+        };
+
+        combo-bang {
+            bindings = <&kp EXCL>;
+            key-positions = <1 11>;
+        };
+
+        combo-at {
+            bindings = <&kp AT>;
+            key-positions = <2 12>;
+        };
+
+        combo-hash {
+            bindings = <&kp HASH>;
+            key-positions = <3 13>;
+        };
+
+        combo-dollar {
+            bindings = <&kp DOLLAR>;
+            key-positions = <4 14>;
+        };
+
+        combo-percent {
+            bindings = <&kp PERCENT>;
+            key-positions = <5 15>;
+        };
+
+        combo-hat {
+            bindings = <&kp CARET>;
+            key-positions = <6 16>;
+        };
+
+        combo-ampersand {
+            bindings = <&kp AMPERSAND>;
+            key-positions = <7 17>;
+        };
+
+        combo-star {
+            bindings = <&kp STAR>;
+            key-positions = <8 18>;
         };
     };
 
