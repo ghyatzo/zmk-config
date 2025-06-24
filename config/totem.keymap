@@ -82,6 +82,15 @@
             tapping-term-ms = <175>;
             flavor = "tap-preferred";
         };
+
+        drop2base_ht: drop2base_ht {
+            compatible = "zmk,behavior-hold-tap";
+            label = "DROP2BASE_HT";
+            bindings = <&drop2base_aoe>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+        };
     };
 
     combos {
@@ -165,9 +174,7 @@
         drop2base_aoe: drop2base_aoe {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&tog 5>
-                     , <&macro_pause_for_release>
-                     , <&tog 5>;
+            bindings = <&tog 5>, <&macro_pause_for_release>, <&tog 5>;
 
             label = "DROP2BASE_AOE";
         };
@@ -229,10 +236,10 @@
         AOE4-Gaming {
             display-name = "AOE4";
             bindings = <
-           &trans  &trans  &trans     &trans     &trans         &trans  &trans  &trans  &trans  &trans
-           &kp N4  &kp N3  &kp N2     &kp N1     &trans         &trans  &trans  &trans  &trans  &trans
-&kp LSHFT  &kp N0  &kp N6  &kp N7     &kp N8     &kp N9         &trans  &trans  &trans  &trans  &trans  &trans
-                           &kp LSHFT  &kp LCTRL  &lt 0 SPACE    &trans  &trans  &trans
+           &trans  &trans  &trans     &trans     &trans                   &trans  &trans  &trans  &trans  &trans
+           &kp N4  &kp N3  &kp N2     &kp N1     &trans                   &trans  &trans  &trans  &trans  &trans
+&kp LSHFT  &kp N0  &kp N6  &kp N7     &kp N8     &kp N9                   &trans  &trans  &trans  &trans  &trans  &trans
+                           &kp LSHFT  &kp LCTRL  &drop2base_ht 0 SPACE    &trans  &trans  &trans
             >;
         };
     };
