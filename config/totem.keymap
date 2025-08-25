@@ -40,7 +40,7 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "balanced";
-            require-prior-idle-ms = <150>;
+            require-prior-idle-ms = <120>;
             tapping-term-ms = <250>;
             quick-tap-ms = <175>;
             bindings = <&kp>, <&kp>;
@@ -54,7 +54,7 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "balanced";
-            require-prior-idle-ms = <150>;
+            require-prior-idle-ms = <120>;
             tapping-term-ms = <250>;
             quick-tap-ms = <175>;
             bindings = <&kp>, <&kp>;
@@ -196,10 +196,10 @@
         Nav {
             display-name = "Nav";
             bindings = <
-        &kp GRAVE  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp PLUS        &kp EQUAL  &kp HOME     &kp DELETE  &kp END        &trans
-        &trans     &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp MINUS       &kp SLASH  &kp LEFT     &kp UP      &kp RIGHT      &trans
-&trans  &trans     &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0    &kp STAR   &kp PAGE_UP  &kp DOWN    &kp PAGE_DOWN  &trans  &trans
-                                 &trans        &trans        &trans          &trans     &trans       &trans
+        &trans  &kp NUMBER_1  &kp NUMBER_2   &kp NUMBER_3  &kp PLUS        &kp EQUAL  &kp HOME     &kp DELETE  &kp END        &trans
+        &trans  &kp NUMBER_4  &kp NUMBER_5   &kp NUMBER_6  &kp MINUS       &kp SLASH  &kp LEFT     &kp UP      &kp RIGHT      &trans
+&trans  &trans  &kp NUMBER_7  &kp NUMBER_8   &kp NUMBER_9  &kp NUMBER_0    &kp STAR   &kp PAGE_UP  &kp DOWN    &kp PAGE_DOWN  &trans  &trans
+                              &kp BACKSPACE  &trans        &trans          &trans     &trans       &trans
             >;
         };
 
