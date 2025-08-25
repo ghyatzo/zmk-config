@@ -111,7 +111,7 @@
 
         combo-dash {
             bindings = <&kp MINUS>;
-            key-positions = <14 25>;
+            key-positions = <13 24>;
         };
 
         combo-equal {
@@ -121,7 +121,7 @@
 
         combo-underscore {
             bindings = <&kp UNDER>;
-            key-positions = <13 24>;
+            key-positions = <14 25>;
         };
 
         combo-plus {
@@ -207,8 +207,8 @@
             display-name = "Sym";
             bindings = <
         &kp GRAVE  &kp NUMBER_1  &kp NUMBER_2      &kp NUMBER_3          &kp NUMBER_4      &kp NUMBER_5     &kp NUMBER_6           &kp NUMBER_7       &kp NUMBER_8  &kp NUMBER_9
-        &trans     &trans        &kp LEFT_BRACKET  &kp LEFT_PARENTHESIS  &kp LEFT_BRACE    &kp RIGHT_BRACE  &kp RIGHT_PARENTHESIS  &kp RIGHT_BRACKET  &trans        &trans
-&trans  &trans     &trans        &trans            &trans                &kp N0            &kp NUMBER_0     &kp EQUAL              &trans             &trans        &kp BACKSLASH  &kp APOS
+        &trans     &trans        &kp LEFT_BRACKET  &kp LEFT_PARENTHESIS  &kp LEFT_BRACE    &kp RIGHT_BRACE  &kp RIGHT_PARENTHESIS  &kp RIGHT_BRACKET  &trans        &kp COLON
+&trans  &trans     &trans        &trans            &trans                &kp N0            &kp NUMBER_0     &kp EQUAL              &trans             &trans        &kp BACKSLASH  &kp DOUBLE_QUOTES
                                  &trans            &trans                &studio_unlock    &kp SPACE        &trans                 &trans
             >;
         };
