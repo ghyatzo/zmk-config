@@ -100,13 +100,13 @@
             bindings = <&to 0>;
             key-positions = <34 35>;
             require-prior-idle-ms = <100>;
-            layers = <4 5>;
+            layers = <5 6>;
         };
 
         aoe4-city-center {
             bindings = <&kp H>;
             key-positions = <13 12>;
-            layers = <5>;
+            layers = <6>;
         };
 
         combo-dash {
@@ -168,13 +168,18 @@
             bindings = <&kp STAR>;
             key-positions = <8 18>;
         };
+
+        swap-meta-ctrl {
+            bindings = <&tog 1>;
+            key-positions = <12 10 17 19>;
+        };
     };
 
     macros {
         drop2base_aoe: drop2base_aoe {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&tog 5>, <&macro_pause_for_release>, <&tog 5>;
+            bindings = <&tog 6>, <&macro_pause_for_release>, <&tog 6>;
 
             label = "DROP2BASE_AOE";
         };
@@ -188,8 +193,17 @@
             bindings = <
               &kp Q                &kp W            &kp E             &kp R              &kp T        &kp Y    &kp U               &kp I                      &kp O             &kp P
               &hml LEFT_CONTROL A  &hml LEFT_ALT S  &hml LEFT_META D  &hml LEFT_SHIFT F  &kp G        &kp H    &hmr RIGHT_SHIFT J  &hmr RIGHT_META K          &hmr RIGHT_ALT L  &hmr RIGHT_CONTROL SEMICOLON
-&lt 3 ESCAPE  &kp Z                &kp X            &kp C             &kp V              &kp B        &kp N    &kp M               &kp COMMA                  &kp DOT           &kp SLASH                     &kp APOSTROPHE
-                                                    &mt LCTRL DEL     &lt 2 TAB          &kp SPACE    &kp RET  &lt 1 BSPC          &magic_shift LEFT_SHIFT 0
+&lt 4 ESCAPE  &kp Z                &kp X            &kp C             &kp V              &kp B        &kp N    &kp M               &kp COMMA                  &kp DOT           &kp SLASH                     &kp APOSTROPHE
+                                                    &mt LCTRL DEL     &lt 3 TAB          &kp SPACE    &kp RET  &lt 2 BSPC          &magic_shift LEFT_SHIFT 0
+            >;
+        };
+
+        META-CTRL-SWAP {
+            bindings = <
+        &trans            &trans  &trans        &trans  &trans    &trans  &trans  &trans        &trans  &trans
+        &hml LEFT_META A  &trans  &hml LCTRL D  &trans  &trans    &trans  &trans  &hmr RCTRL K  &trans  &hmr RIGHT_META SEMICOLON
+&trans  &trans            &trans  &trans        &trans  &trans    &trans  &trans  &trans        &trans  &trans                     &trans
+                                  &trans        &trans  &trans    &trans  &trans  &trans
             >;
         };
 
@@ -216,8 +230,8 @@
         Fun {
             display-name = "Fun";
             bindings = <
-        &trans  &trans  &trans  &trans  &to 4     &trans  &trans  &trans  &trans  &kp F1
-        &trans  &trans  &trans  &trans  &tog 5    &trans  &trans  &trans  &trans  &kp F10
+        &trans  &trans  &trans  &trans  &to 5     &trans  &trans  &trans  &trans  &kp F1
+        &trans  &trans  &trans  &trans  &tog 6    &trans  &trans  &trans  &trans  &kp F10
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &kp F20  &kp F7
                         &trans  &trans  &trans    &trans  &trans  &trans
             >;
