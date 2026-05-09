@@ -91,7 +91,6 @@
             bindings = <&to 0>;
             key-positions = <34 35>;
             require-prior-idle-ms = <100>;
-            layers = <5>;
         };
 
         combo-dash {
