@@ -82,15 +82,6 @@
             tapping-term-ms = <175>;
             flavor = "tap-preferred";
         };
-
-        drop2base_ht: drop2base_ht {
-            compatible = "zmk,behavior-hold-tap";
-            label = "DROP2BASE_HT";
-            bindings = <&drop2base_aoe>, <&kp>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-        };
     };
 
     combos {
@@ -100,13 +91,7 @@
             bindings = <&to 0>;
             key-positions = <34 35>;
             require-prior-idle-ms = <100>;
-            layers = <5 6>;
-        };
-
-        aoe4-city-center {
-            bindings = <&kp H>;
-            key-positions = <13 12>;
-            layers = <6>;
+            layers = <5>;
         };
 
         combo-dash {
@@ -175,16 +160,6 @@
         };
     };
 
-    macros {
-        drop2base_aoe: drop2base_aoe {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&tog 6>, <&macro_pause_for_release>, <&tog 6>;
-
-            label = "DROP2BASE_AOE";
-        };
-    };
-
     keymap {
         compatible = "zmk,keymap";
 
@@ -212,7 +187,7 @@
             bindings = <
         &trans  &kp NUMBER_1  &kp NUMBER_2   &kp NUMBER_3  &kp PLUS        &kp EQUAL       &kp HOME        &kp DELETE    &kp END          &kp PAGE_UP
         &trans  &kp NUMBER_4  &kp NUMBER_5   &kp NUMBER_6  &kp MINUS       &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &trans
-&trans  &trans  &kp NUMBER_7  &kp NUMBER_8   &kp NUMBER_9  &kp NUMBER_0    &kp NUMBER_0    &none           &kp COMMA     &kp DOT          &kp PAGE_DOWN  &trans
+&trans  &trans  &kp NUMBER_7  &kp NUMBER_8   &kp NUMBER_9  &kp NUMBER_0    &kp NUMBER_0    &none           &trans        &trans           &kp PAGE_DOWN  &trans
                               &kp BACKSPACE  &trans        &trans          &trans          &trans          &trans
             >;
         };
@@ -222,7 +197,7 @@
             bindings = <
         &kp GRAVE  &kp NUMBER_1  &kp NUMBER_2      &kp NUMBER_3          &kp NUMBER_4      &kp NUMBER_5     &kp NUMBER_6           &kp NUMBER_7       &kp NUMBER_8      &kp NUMBER_9
         &trans     &kp TILDE     &kp LEFT_BRACKET  &kp LEFT_PARENTHESIS  &kp LEFT_BRACE    &kp RIGHT_BRACE  &kp RIGHT_PARENTHESIS  &kp RIGHT_BRACKET  &kp QUESTION      &kp COLON
-&trans  &trans     &trans        &trans            &trans                &kp N0            &kp NUMBER_0     &kp EQUAL              &kp LESS_THAN      &kp GREATER_THAN  &kp BACKSLASH  &kp DOUBLE_QUOTES
+&trans  &trans     &kp PIPE      &trans            &trans                &kp N0            &kp NUMBER_0     &kp EQUAL              &kp LESS_THAN      &kp GREATER_THAN  &kp BACKSLASH  &kp DOUBLE_QUOTES
                                  &trans            &trans                &studio_unlock    &kp SPACE        &trans                 &trans
             >;
         };
@@ -230,10 +205,10 @@
         Fun {
             display-name = "Fun";
             bindings = <
-        &trans  &trans  &trans  &trans  &to 5     &trans  &trans  &trans  &trans  &kp F1
-        &trans  &trans  &trans  &trans  &tog 6    &trans  &trans  &trans  &trans  &kp F10
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &kp F20  &kp F7
-                        &trans  &trans  &trans    &trans  &trans  &trans
+        &to 5   &kp F1  &kp F2  &kp F3  &kp F10    &trans  &trans  &trans  &trans  &trans
+        &to 6   &kp F4  &kp F5  &kp F6  &kp F11    &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &kp F7  &kp F8  &kp F9  &kp F12    &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans     &trans  &trans  &trans
             >;
         };
 
@@ -247,14 +222,26 @@
             >;
         };
 
-        AOE4-Gaming {
-            display-name = "AOE4";
+        AOE-Base {
             bindings = <
-           &trans  &trans  &trans     &trans     &trans                   &trans  &trans  &trans  &trans  &trans
-           &kp N4  &kp N3  &kp N2     &kp N1     &trans                   &trans  &trans  &trans  &trans  &trans
-&kp LSHFT  &kp N0  &kp N6  &kp N7     &kp N8     &kp N9                   &trans  &trans  &trans  &trans  &trans  &trans
-                           &kp LSHFT  &kp LCTRL  &drop2base_ht 0 SPACE    &trans  &trans  &trans
+        &trans  &trans  &trans  &trans     &trans    &trans  &trans  &trans  &trans  &trans
+        &trans  &trans  &trans  &trans     &trans    &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans     &trans    &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &lt 7 TAB  &trans    &trans  &trans  &trans
             >;
+
+            label = "AOE-Base";
+        };
+
+        AOE-Control {
+            bindings = <
+                &kp LS(LCTRL)  &kp NUMBER_1  &kp N2  &kp N3  &kp APOS     &trans  &trans  &trans  &trans  &trans
+                &kp LCTRL      &kp N4        &kp N5  &kp N6  &kp DOT      &trans  &trans  &trans  &trans  &trans
+&kp LEFT_SHIFT  &kp LA(LCTRL)  &kp N7        &kp N8  &kp N9  &kp COMMA    &trans  &trans  &trans  &trans  &trans  &trans
+                                             &trans  &trans  &trans       &trans  &trans  &trans
+            >;
+
+            label = "AOE-Control";
         };
     };
 };
