@@ -204,20 +204,10 @@
         Fun {
             display-name = "Fun";
             bindings = <
-        &to 5   &kp F1  &kp F2  &kp F3  &kp F10    &trans  &trans  &trans  &trans  &trans
-        &to 6   &kp F4  &kp F5  &kp F6  &kp F11    &trans  &trans  &trans  &trans  &trans
+        &to 7   &kp F1  &kp F2  &kp F3  &kp F10    &trans  &trans  &trans  &trans  &trans
+        &to 5   &kp F4  &kp F5  &kp F6  &kp F11    &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &kp F7  &kp F8  &kp F9  &kp F12    &trans  &trans  &trans  &trans  &trans  &trans
                         &trans  &trans  &trans     &trans  &trans  &trans
-            >;
-        };
-
-        WASD-Gaming {
-            display-name = "WASD-Game";
-            bindings = <
-            &kp TAB         &kp Q  &kp X      &kp E         &kp R     &trans  &trans  &trans  &trans  &trans
-            &kp LEFT_SHIFT  &kp A  &kp W      &kp D         &kp F     &trans  &trans  &trans  &trans  &trans
-&kp ESCAPE  &kp Z           &kp C  &kp S      &kp V         &kp T     &trans  &trans  &trans  &trans  &trans  &trans
-                                   &kp LCTRL  &kp LEFT_ALT  &trans    &trans  &trans  &trans
             >;
         };
 
@@ -226,7 +216,7 @@
         &trans  &trans  &trans  &trans     &trans    &trans  &trans  &trans  &trans  &trans
         &trans  &trans  &trans  &trans     &trans    &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans     &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &lt 7 TAB  &trans    &trans  &trans  &trans
+                        &trans  &lt 6 TAB  &trans    &trans  &trans  &trans
             >;
 
             label = "AOE-Base";
@@ -241,6 +231,24 @@
             >;
 
             label = "AOE-Control";
+        };
+
+        WASD-Base {
+            bindings = <
+         &kp GRAVE  &kp N1  &kp N2    &kp N3     &kp N4       &trans  &trans  &trans  &trans  &trans
+         &kp LSHFT  &kp A   &kp W     &kp D      &kp R        &trans  &trans  &trans  &trans  &trans
+&kp ESC  &kp LCTRL  &kp Q   &kp S     &kp E      &kp F        &trans  &trans  &trans  &trans  &trans  &trans
+                            &kp LALT  &lt 8 TAB  &kp SPACE    &trans  &trans  &trans
+            >;
+        };
+
+        WASD-Secondary {
+            bindings = <
+          &kp M      &kp N5  &kp N6    &kp N7  &kp N8       &trans  &trans  &trans  &trans  &trans
+          &kp LSHFT  &kp T   &kp G     &kp X   &kp V        &trans  &trans  &trans  &trans  &trans
+&kp CAPS  &kp LCTRL  &kp Z   &kp C     &kp B   &kp N        &trans  &trans  &trans  &trans  &trans  &trans
+                             &kp LALT  &trans  &kp SPACE    &trans  &trans  &trans
+            >;
         };
     };
 };
