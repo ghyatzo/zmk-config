@@ -157,6 +157,12 @@
             bindings = <&tog 1>;
             key-positions = <12 10 17 19>;
         };
+
+        AOE-Hometown {
+            bindings = <&kp H>;
+            key-positions = <12 13>;
+            layers = <5>;
+        };
     };
 
     keymap {
