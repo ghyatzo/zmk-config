@@ -219,10 +219,10 @@
 
         AOE-Base {
             bindings = <
-       &trans  &trans  &trans  &trans     &trans    &trans  &trans  &trans  &trans  &trans
-       &trans  &trans  &trans  &trans     &trans    &trans  &trans  &trans  &trans  &trans
-&kp H  &trans  &trans  &trans  &trans     &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                       &trans  &lt 6 TAB  &trans    &trans  &trans  &trans
+        &trans  &trans  &trans  &trans     &trans    &trans  &trans  &trans  &trans  &trans
+        &trans  &trans  &trans  &trans     &trans    &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans     &trans    &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &lt 6 TAB  &trans    &trans  &trans  &trans
             >;
 
             label = "AOE-Base";
