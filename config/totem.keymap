@@ -82,6 +82,28 @@
             tapping-term-ms = <175>;
             flavor = "tap-preferred";
         };
+
+        // Game mod-tap: hold = modifier, tap = letter.  No key-position
+        // restriction, so any other key forces the hold (no HRM tuning).
+        game_hml: game_hold_mod_left {
+            compatible = "zmk,behavior-hold-tap";
+            label = "GAME_HOLD_MOD_LEFT";
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <150>;
+            bindings = <&kp>, <&kp>;
+        };
+
+        // Game A: while Shift is held (running), A emits a plain Ctrl the
+        // instant it is pressed (slide/crouch).  Otherwise it is the
+        // hold-tap above, so 'a' still types.
+        game_a: game_a {
+            compatible = "zmk,behavior-mod-morph";
+            label = "GAME_A";
+            #binding-cells = <0>;
+            bindings = <&game_hml LCTRL A>, <&kp LCTRL>;
+            mods = <(MOD_LSFT)>;
+        };
     };
 
     combos {
@@ -96,66 +118,79 @@
         combo-dash {
             bindings = <&kp MINUS>;
             key-positions = <13 24>;
+            layers = <0 1 2 3 4 5 6>;
         };
 
         combo-equal {
             bindings = <&kp EQUAL>;
             key-positions = <16 27>;
+            layers = <0 1 2 3 4 5 6>;
         };
 
         combo-underscore {
             bindings = <&kp UNDER>;
             key-positions = <14 25>;
+            layers = <0 1 2 3 4 5 6>;
         };
 
         combo-plus {
             bindings = <&kp PLUS>;
             key-positions = <15 26>;
+            layers = <0 1 2 3 4 5 6>;
         };
 
         combo-bang {
             bindings = <&kp EXCL>;
             key-positions = <1 11>;
+            layers = <0 1 2 3 4 5 6>;
         };
 
         combo-at {
             bindings = <&kp AT>;
             key-positions = <2 12>;
+            layers = <0 1 2 3 4 5 6>;
         };
 
         combo-hash {
             bindings = <&kp HASH>;
             key-positions = <3 13>;
+            layers = <0 1 2 3 4 5 6>;
         };
 
         combo-dollar {
             bindings = <&kp DOLLAR>;
             key-positions = <4 14>;
+            layers = <0 1 2 3 4 5 6>;
         };
 
         combo-percent {
             bindings = <&kp PERCENT>;
             key-positions = <5 15>;
+            layers = <0 1 2 3 4 5 6>;
         };
 
         combo-hat {
             bindings = <&kp CARET>;
             key-positions = <6 16>;
+            layers = <0 1 2 3 4 5 6>;
         };
 
         combo-ampersand {
             bindings = <&kp AMPERSAND>;
             key-positions = <7 17>;
+            layers = <0 1 2 3 4 5 6>;
         };
 
         combo-star {
             bindings = <&kp STAR>;
             key-positions = <8 18>;
+            layers = <0 1 2 3 4 5 6>;
         };
 
         swap-meta-ctrl {
             bindings = <&tog 1>;
             key-positions = <12 10 17 19>;
+            layers = <0 1 2 3 4 5 6>;
         };
 
         AOE-Hometown {
@@ -239,21 +274,42 @@
             label = "AOE-Control";
         };
 
-        WASD-Base {
+        // ------------------------------------------------------------------
+        // Game: toggleable FPS/MMO layer.  Letters sit at their normal
+        // QWERTY positions (rebind the *game* to ESDF); all hold-taps and
+        // combos are stripped so nothing misfires under pressure.
+        //
+        //   * A      = &game_a : hold Ctrl / tap 'a', but a plain instant
+        //              Ctrl while Shift is held (run + slide).
+        //   * outer  = LSHIFT (sprint/walk)
+        //   * LTh1   = ESC,  LTh2 = hold for Hotbar,  LTh3 = SPACE
+        //   * exit   = &to 0 thumb-pair combo (34 + 35)
+        // ------------------------------------------------------------------
+        Game {
+            display-name = "Game";
             bindings = <
-         &kp GRAVE  &kp N1  &kp N2    &kp N3     &kp N4       &trans  &trans  &trans  &trans  &trans
-         &kp LSHFT  &kp A   &kp W     &kp D      &kp R        &trans  &trans  &trans  &trans  &trans
-&kp ESC  &kp LCTRL  &kp Q   &kp S     &kp E      &kp F        &trans  &trans  &trans  &trans  &trans  &trans
-                            &kp LALT  &lt 8 TAB  &kp SPACE    &trans  &trans  &trans
+               &kp Q        &kp W    &kp E    &kp R    &kp T        &kp Y    &kp U    &kp I        &kp O        &kp P
+             &game_a        &kp S    &kp D    &kp F    &kp G        &kp H    &kp J    &kp K        &kp L        &kp SEMICOLON
+&kp LSHIFT  &kp Z  &kp X    &kp C    &kp V    &kp B        &kp N    &kp M    &kp COMMA    &kp DOT      &kp SLASH  &kp APOSTROPHE
+                                &kp ESCAPE  &mo 8  &kp SPACE    &kp RET  &kp BSPC  &kp DELETE
             >;
         };
 
-        WASD-Secondary {
+        // ------------------------------------------------------------------
+        // Hotbar: held via Game LTh2 (&mo 8).  MMO action bar.
+        //   * pinky column = real mods   (Q spare, A=Ctrl, Z=Alt, outer=Shift)
+        //   * centre 3x3   = 1-9, pressed by middle/index so the pinky can
+        //                    hold a mod and chord
+        //   * 0            = B (right of the pad)
+        //   * right half / thumbs unchanged (transparent -> Game)
+        // ------------------------------------------------------------------
+        Hotbar {
+            display-name = "Hotbar";
             bindings = <
-          &kp M      &kp N5  &kp N6    &kp N7  &kp N8       &trans  &trans  &trans  &trans  &trans
-          &kp LSHFT  &kp T   &kp G     &kp X   &kp V        &trans  &trans  &trans  &trans  &trans
-&kp CAPS  &kp LCTRL  &kp Z   &kp C     &kp B   &kp N        &trans  &trans  &trans  &trans  &trans  &trans
-                             &kp LALT  &trans  &kp SPACE    &trans  &trans  &trans
+                  &trans  &kp N1   &kp N2  &kp N3  &trans       &trans  &trans  &trans  &trans  &trans
+               &kp LCTRL  &kp N4   &kp N5  &kp N6  &trans       &trans  &trans  &trans  &trans  &trans
+&kp LSHIFT  &kp LALT  &kp N7  &kp N8  &kp N9  &kp N0       &trans  &trans  &trans  &trans  &trans  &trans
+                                         &kp ESCAPE  &trans  &kp SPACE    &trans  &trans  &trans
             >;
         };
     };
