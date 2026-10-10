@@ -245,7 +245,7 @@
         Fun {
             display-name = "Fun";
             bindings = <
-        &to 7   &kp F1  &kp F2  &kp F3  &kp F10    &trans  &trans  &trans  &trans  &trans
+        &tog 7  &kp F1  &kp F2  &kp F3  &kp F10    &trans  &trans  &trans  &trans  &trans
         &to 5   &kp F4  &kp F5  &kp F6  &kp F11    &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &kp F7  &kp F8  &kp F9  &kp F12    &trans  &trans  &trans  &trans  &trans  &trans
                         &trans  &trans  &trans     &trans  &trans  &trans
@@ -275,9 +275,11 @@
         };
 
         // ------------------------------------------------------------------
-        // Game: toggleable FPS/MMO layer.  Letters sit at their normal
-        // QWERTY positions (rebind the *game* to ESDF); all hold-taps and
-        // combos are stripped so nothing misfires under pressure.
+        // Game: toggleable FPS/MMO layer, stacked on Base via &tog 7
+        // (entered from Fun).  Left half is explicit (letters at normal
+        // QWERTY positions; rebind the *game* to ESDF); right half is
+        // &trans so it keeps Base's letters + home-row mods.  No hold-taps
+        // and no combos on the left half.
         //
         //   * A      = &game_a : hold Ctrl / tap 'a', but a plain instant
         //              Ctrl while Shift is held (run + slide).
@@ -288,10 +290,10 @@
         Game {
             display-name = "Game";
             bindings = <
-               &kp Q        &kp W    &kp E    &kp R    &kp T        &kp Y    &kp U    &kp I        &kp O        &kp P
-             &game_a        &kp S    &kp D    &kp F    &kp G        &kp H    &kp J    &kp K        &kp L        &kp SEMICOLON
-&kp LSHIFT  &kp Z  &kp X    &kp C    &kp V    &kp B        &kp N    &kp M    &kp COMMA    &kp DOT      &kp SLASH  &kp APOSTROPHE
-                                &kp ESCAPE  &mo 8  &kp SPACE    &kp RET  &kp BSPC  &kp DELETE
+               &kp Q        &kp W    &kp E    &kp R    &kp T        &trans  &trans  &trans    &trans    &trans
+             &game_a        &kp S    &kp D    &kp F    &kp G        &trans  &trans  &trans    &trans    &trans
+&kp LSHIFT  &kp Z  &kp X    &kp C    &kp V    &kp B        &trans  &trans  &trans    &trans      &trans    &trans
+                                &kp ESCAPE  &mo 8  &kp SPACE    &trans  &trans  &trans
             >;
         };
 
